@@ -7,6 +7,6 @@ namespace DbScrambler.Core.Models
     public interface IScrambler
     {
         Object Scramble(Object value);
-        Dictionary<string, object> Properties { get; set; }
+        Dictionary<string, object> Properties { get;}
     }
 }
