@@ -17,7 +17,7 @@ namespace DbScrambler.Core.Test.Scramblers
 
             var hash = new Hash(salt);
 
-            var response = hash.Scramble(value).ToString();
+            var response = hash.Scramble(value,null).ToString();
 
             Assert.Equal(expected, response);
         }

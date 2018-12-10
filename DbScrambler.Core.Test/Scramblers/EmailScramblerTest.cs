@@ -17,7 +17,7 @@ namespace DbScrambler.Core.Test.Scramblers
 
             var emailScrambler = new EmailScrambler(salt);
 
-            var response = emailScrambler.Scramble(value).ToString();
+            var response = emailScrambler.Scramble(value,null).ToString();
 
             Assert.Equal(expected, response);
         }
@@ -31,10 +31,10 @@ namespace DbScrambler.Core.Test.Scramblers
 
             var emailScrambler = new EmailScrambler(salt);
 
-            var response = emailScrambler.Scramble(value).ToString();
+            var response = emailScrambler.Scramble(value,null).ToString();
             Assert.Equal(expected, response);
 
-            response = emailScrambler.Scramble(value2).ToString();
+            response = emailScrambler.Scramble(value2,null).ToString();
             Assert.Equal(expected, response);
 
         }
@@ -47,7 +47,7 @@ namespace DbScrambler.Core.Test.Scramblers
 
             var emailScrambler = new EmailScrambler(salt);
 
-            var response = emailScrambler.Scramble(value).ToString();
+            var response = emailScrambler.Scramble(value,null).ToString();
 
             Assert.Equal(expected, response);
         }
@@ -60,7 +60,7 @@ namespace DbScrambler.Core.Test.Scramblers
 
             var emailScrambler = new EmailScrambler(salt);
 
-            var response = emailScrambler.Scramble(value).ToString();
+            var response = emailScrambler.Scramble(value,null).ToString();
 
             Assert.Equal(expected, response);
         }

@@ -8,14 +8,14 @@ namespace DbScrambler.Core.Models
     {
         public Profile()
         {
-            Scramblers = new Dictionary<string, IScrambler>();
+            Scramblers = new Dictionary<string, BaseScrambler>();
             Tables = new List<Table>();
         }
 
         public string DatabaseType { get; set; }
         public string ConnectionString { get; set; }
         public string Seed { get; set; }
-        public Dictionary<string, IScrambler> Scramblers { get; set; }
+        public Dictionary<string, BaseScrambler> Scramblers { get; set; }
 
         public List<Table> Tables  { get; set; }
 

@@ -4,11 +4,18 @@ using System.Text;
 
 namespace DbScrambler.Core.Models.Scramblers
 {
-    public class PhoneScrambler : IScrambler
+    public class PhoneScrambler : BaseScrambler
     {
-        public Dictionary<string, object> Properties { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public PhoneScrambler(string salt) : base(salt)
+        {
+        }
 
-        public object Scramble(object value)
+        public override bool IsValid()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Scramble(object value, Dictionary<string, string> fields)
         {
             throw new NotImplementedException();
         }

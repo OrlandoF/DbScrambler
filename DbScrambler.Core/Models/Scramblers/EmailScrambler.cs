@@ -14,7 +14,13 @@ namespace DbScrambler.Core.Models.Scramblers
         {
             _hasher = new Hash(salt);
         }
-        public override object Scramble(object value)
+
+        public override bool IsValid()
+        {
+            return true;
+        }
+
+        public override object Scramble(object value, Dictionary<string, string> fields)
         {
             if (value == null) return "";
 
@@ -26,7 +32,7 @@ namespace DbScrambler.Core.Models.Scramblers
 
             if (emailParts.Length != 2) return _invalidEmail;
 
-            var hashed = _hasher.Scramble(emailParts[0]);
+            var hashed = _hasher.Scramble(emailParts[0],null);
 
             var newEmail = hashed + "@" + emailParts[1];
 

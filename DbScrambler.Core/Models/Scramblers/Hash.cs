@@ -12,7 +12,12 @@ namespace DbScrambler.Core.Models.Scramblers
            
         }
 
-        public override object Scramble(object value)
+        public override bool IsValid()
+        {
+            return true;
+        }
+
+        public override object Scramble(object value, Dictionary<string, string> fields)
         {
             String text = value.ToString();
             var valueBytes = KeyDerivation.Pbkdf2(

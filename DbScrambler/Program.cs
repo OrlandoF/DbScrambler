@@ -19,9 +19,9 @@ namespace DbScrambler
             Profile profile = new Profile {ConnectionString="Server=;User=;Password=;Database=;"
             , Seed="myseed"};
 
-            var scrambler = new SampleScrambler();
+            var scrambler = new EmailScrambler(profile.Seed);
             scrambler.Properties.Add("prop1", "value1");
-            scrambler.Properties.Add("prop2", DateTime.Now);
+            scrambler.Properties.Add("prop2", DateTime.Now.ToString());
             profile.Scramblers.Add("sample", scrambler);
 
             profile.Tables.Add(new Table
